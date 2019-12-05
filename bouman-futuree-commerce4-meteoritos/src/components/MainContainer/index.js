@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-
+import FiltroDeProduto from '../FiltroDeProduto/index';
+import LojaCarrinho from '../LojaCarrinho/index'
 const MainContainer = styled.div`
   
 `;
@@ -65,7 +66,7 @@ render(){
 
   return(
     <MainContainer>
-
+      <FiltroDeProduto/>
     
 
     </MainContainer>
