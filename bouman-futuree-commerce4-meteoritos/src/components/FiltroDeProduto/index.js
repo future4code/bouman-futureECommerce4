@@ -6,8 +6,8 @@ const ContainerFiltro = styled.div`
   flex-direction: column;
   min-width: 120px;
   max-width: 35%;
-  min-height: 50vh
-  border: 1px solid black
+  min-height: 50vh;
+  border: 1px solid black;
   padding: 10px;
 `
 

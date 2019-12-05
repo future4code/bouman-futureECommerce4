@@ -7,6 +7,8 @@ const MenuCarrinho = styled.div`
   border: 1px solid black;
   text-align: left;
   padding: 0.5vh 1vw;
+  height: 100%;
+  width: 300px;
 `;
 
 const BotaoCarrinho = styled.div`

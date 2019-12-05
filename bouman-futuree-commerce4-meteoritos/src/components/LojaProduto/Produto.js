@@ -15,7 +15,7 @@ const ProdutoContainer = styled.div`
   align-items: start;
   justify-content: flex-start;
   padding: 5px;
-
+  margin: 5px;
 
 `
 const ProdutoImage = styled.img `
@@ -37,8 +37,8 @@ const PValor = styled.p `
 function Produto (props) {
   return (
     <ProdutoContainer>
-      <ProdutoImage src={props.urlImagem}/>
-      <PNOme>{props.nome}</PNOme>
+      <ProdutoImage src={"http://www.sun.org/uploads/meteoriteimages/4/mainimage_Seymchan_-_357g_4.JPG"}/>
+      <PNOme>item 1</PNOme>
       <PValor>R${props.valor}</PValor>
       <ProdutoFooter/>
     </ProdutoContainer>

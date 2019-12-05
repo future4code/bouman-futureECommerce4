@@ -1,14 +1,12 @@
 import React from 'react';
 import './App.css';
-import FiltroDeProduto from './components/FiltroDeProduto';
-import Produto from './components/LojaProduto/Produto';
+import MainContainer from './components/MainContainer/index'
 
 
 function App() {
   return (
     <div className="App">
-
-      <FiltroDeProduto />
+      <MainContainer></MainContainer>
     </div>
   );
 }
