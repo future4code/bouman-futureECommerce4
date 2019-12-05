@@ -5,7 +5,7 @@ import ProdutoFooter from './ProdutoFooter';
 // Estilização
 
 const ProdutoContainer = styled.div`
-  width: 40%;
+  width: 40vw;
   height: 250px;
   border: 1px dotted orange;
   min-width: 100px;
@@ -37,8 +37,8 @@ const PValor = styled.p `
 function Produto (props) {
   return (
     <ProdutoContainer>
-      <ProdutoImage src={"http://www.sun.org/uploads/meteoriteimages/4/mainimage_Seymchan_-_357g_4.JPG"}/>
-      <PNOme>item 1</PNOme>
+      <ProdutoImage src={props.urlImagem}/>
+      <PNOme>{props.nome}</PNOme>
       <PValor>R${props.valor}</PValor>
       <ProdutoFooter/>
     </ProdutoContainer>
