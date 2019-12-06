@@ -4,7 +4,7 @@ import Produto from "../LojaProduto/Produto";
 import FiltroDeProduto from "../FiltroDeProduto/index"
 import LojaCarrinho from "../LojaCarrinho/index"
 
-const MainContainer  = styled.div`
+const MainContainer = styled.div`
   /* border: 1px solid black; */
   width: 100%;
   height: 650px;
@@ -12,7 +12,7 @@ const MainContainer  = styled.div`
   
 `;
 
-const ContainerDeProdutos = styled.div `
+const ContainerDeProdutos = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -46,6 +46,7 @@ const Select = styled.select`
 `
 
 
+
 export default class ProdutosContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -63,27 +64,48 @@ export default class ProdutosContainer extends React.Component {
     const listaCarrinhoCopia = [...this.state.listaCarrinho1]
     listaCarrinhoCopia.push(novoItemNoCarrinho); 
     this.setState ({listaCarrinho1: listaCarrinhoCopia})
+
+class ProdutosContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    }
+
   }
 
   render() {
     const listaDeProdutosDoContainer = this.props.produtos.map((cadaProduto) => {
+
       return <Produto dadosProduto={cadaProduto} adicionarItemNoCarrinho={this.adicionarItemNoCarrinho}/>
     })
     return(
       <MainContainer>
         <FiltroDeProduto/>
+
+      return <Produto dadosProduto={cadaProduto} />
+    })
+
+    // const ProdutosFiltrados = this.props.produtos.filter()
+
+    return (
+      <MainContainer>
+        <FiltroDeProduto />
+
         <ContainerDeProdutos>
           <ProdutoHeader>
-            <Texto>Quantidade de Produtos:</Texto> 
+            <Texto>Quantidade de Produtos:</Texto>
             <Select>
               <option>Preço: Crescente</option>
               <option>Preço: Decrescente</option>
             </Select>
           </ProdutoHeader>
+
           <ProdutoGrid>
             {listaDeProdutosDoContainer}
           </ProdutoGrid>
         </ContainerDeProdutos>
+
         <LojaCarrinho listaCarrinho2={this.state.listaCarrinho1}/>
       </MainContainer>
     )
@@ -92,3 +114,14 @@ export default class ProdutosContainer extends React.Component {
 
 
 
+        <LojaCarrinho>
+
+        </LojaCarrinho>
+      </MainContainer >
+    )
+  }
+}
+
+
+
+export default ProdutosContainer
