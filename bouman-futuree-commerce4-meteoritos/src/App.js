@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ProdutosContainer from './components/MainContainer/index'
 import{ render } from "react-dom"
+import FiltradosPorPreco from './components/FiltroDeProduto/FiltradosPorPreco';
 // import Produto from './components/LojaProduto/Produto';
 const listaDeProdutos = [
   {
@@ -54,12 +55,19 @@ const listaDeProdutos = [
     nome: "Seymchan Slice"
   }
 ]
+
+const 
+
 class App extends Component {
   constructor(props){
-    super(props)
+    super(props);
+    this.state = {
+
+    }
   }
   render(){
     return <ProdutosContainer produtos={listaDeProdutos}/>
+    <FiltradosPorPreco valor={props.listaDeProdutos.valor} min={0} max={1000000} />
   }
   
 }
