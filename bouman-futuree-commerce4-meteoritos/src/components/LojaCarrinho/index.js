@@ -18,8 +18,8 @@ const BotaoCarrinho = styled.div`
   background-color: white;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 5px;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   display: flex;
   cursor: pointer;
 `;
@@ -27,8 +27,8 @@ const BotaoCarrinho = styled.div`
 const ImgCarrinho = styled.img`
   margin: auto;
   align-self: center;
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
 `;
 
 export default class LojaCarrinho extends React.Component {

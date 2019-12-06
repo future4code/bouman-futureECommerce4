@@ -14,7 +14,7 @@ const ButtonAdicionarProduto = styled.button `
   border: 0;
   
   :hover {
-    background-color: yellow;
+    background-color: orange;
     color: black;
   }
 `
