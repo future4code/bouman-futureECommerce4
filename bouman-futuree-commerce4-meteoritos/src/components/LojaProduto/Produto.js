@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProdutoFooter from './ProdutoFooter';
+// import { ReactComponent } from '*.svg';
 
 // Estilização
 
@@ -32,18 +32,54 @@ const PValor = styled.p `
   margin: 15px 0px 10px 5px;
 `
 
+const ProdutoFooterContainer = styled.div`
+  width: 100%;
+  height: 100%;
+`
+const ButtonAdicionarProduto = styled.button `
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
+  outline: 0;
+  border: 0;
+  
+  :hover {
+    background-color: orange;
+    color: black;
+  }
+`
+
 // Código
 
-function Produto (props) {
-  
-  return (
-    <ProdutoContainer>
-      <ProdutoImage src={props.dadosProduto.urlImagem}/>
-      <PNOme>{props.dadosProduto.nome}</PNOme>
-      <PValor>R${props.dadosProduto.valor}</PValor>
-      <ProdutoFooter/>
-    </ProdutoContainer>
-  )
+class Produto extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+  }
+
+  aoAdicionarItem = () => {
+    this.props.adicionarItemNoCarrinho(
+      this.props.dadosProduto.id,
+      this.props.dadosProduto.nome,
+      this.props.dadosProduto.valor
+    )
+  }
+
+  render() {
+    return (
+      <ProdutoContainer>
+        <ProdutoImage src={this.props.dadosProduto.urlImagem}/>
+        <PNOme>{this.props.dadosProduto.nome}</PNOme>
+        <PValor>R${this.props.dadosProduto.valor}</PValor>
+        <ProdutoFooterContainer>
+        <ButtonAdicionarProduto onClick={this.aoAdicionarItem}>Adicionar Item</ButtonAdicionarProduto>
+        </ProdutoFooterContainer>
+      </ProdutoContainer>
+    )
+  }
 }
 
 export default Produto;
