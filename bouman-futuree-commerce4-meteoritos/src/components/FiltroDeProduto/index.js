@@ -47,7 +47,7 @@ class FiltroDeProduto extends React.Component {
   render() {
     return (
       <ContainerFiltro>
-        <h1>Filtros:</h1>
+        <h2>Filtros:</h2>
         <FiltroInputs>
           <label id="valorMinimo">Valor Mínimo:</label>
           <input

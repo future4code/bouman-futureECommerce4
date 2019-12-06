@@ -9,7 +9,6 @@ const MainContainer = styled.div`
   width: 100%;
   height: 650px;
   display: flex;
-  
 `;
 
 const ContainerDeProdutos = styled.div`
@@ -18,17 +17,22 @@ const ContainerDeProdutos = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
+`;
+
+const ProdutoTitulo = styled.div`
+  display: flex;
+  margin-top: 20px;
+`;
 
 const ProdutoHeader = styled.div`
   height: 30px; 
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
-  
-`
+  padding: 10px;
+  margin: 0 10px;
+`;
 
 const ProdutoGrid = styled.div`
   display: grid;
@@ -37,13 +41,15 @@ const ProdutoGrid = styled.div`
   justify-items: center;
   gap: 10px;
   margin-top: 13px;
-`
+`;
+
 const Texto = styled.p`
   padding-left: 5px;
-`
+`;
+
 const Select = styled.select`
   margin-right: 5px;
-`
+`;
 
 
 
@@ -64,64 +70,33 @@ export default class ProdutosContainer extends React.Component {
     const listaCarrinhoCopia = [...this.state.listaCarrinho1]
     listaCarrinhoCopia.push(novoItemNoCarrinho); 
     this.setState ({listaCarrinho1: listaCarrinhoCopia})
-
-class ProdutosContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    }
-
   }
 
   render() {
     const listaDeProdutosDoContainer = this.props.produtos.map((cadaProduto) => {
-
       return <Produto dadosProduto={cadaProduto} adicionarItemNoCarrinho={this.adicionarItemNoCarrinho}/>
     })
-    return(
-      <MainContainer>
-        <FiltroDeProduto/>
-
-      return <Produto dadosProduto={cadaProduto} />
-    })
-
     // const ProdutosFiltrados = this.props.produtos.filter()
-
     return (
       <MainContainer>
-        <FiltroDeProduto />
-
+        <FiltroDeProduto/>
         <ContainerDeProdutos>
+          <ProdutoTitulo>
+            <h1>Bem-vindos!</h1>
+          </ProdutoTitulo>
           <ProdutoHeader>
-            <Texto>Quantidade de Produtos:</Texto>
+            <Texto>Quantidade de Produtos: {listaDeProdutosDoContainer.length}</Texto>
             <Select>
               <option>Preço: Crescente</option>
               <option>Preço: Decrescente</option>
             </Select>
           </ProdutoHeader>
-
           <ProdutoGrid>
             {listaDeProdutosDoContainer}
           </ProdutoGrid>
         </ContainerDeProdutos>
-
         <LojaCarrinho listaCarrinho2={this.state.listaCarrinho1}/>
       </MainContainer>
     )
   }
 }
-
-
-
-        <LojaCarrinho>
-
-        </LojaCarrinho>
-      </MainContainer >
-    )
-  }
-}
-
-
-
-export default ProdutosContainer

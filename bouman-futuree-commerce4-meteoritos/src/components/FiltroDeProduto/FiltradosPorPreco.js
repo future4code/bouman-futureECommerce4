@@ -6,7 +6,7 @@ function FiltradosPorPreco(props) {
     const produtosFiltrados = props.valor.filter((cadaValor) =>{
         if(cadaValor.valor > 1000){
             return true
-        }else{
+        } else {
             return false
         }
         
