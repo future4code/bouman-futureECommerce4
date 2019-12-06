@@ -5,7 +5,7 @@ import ProdutoFooter from './ProdutoFooter';
 // Estilização
 
 const ProdutoContainer = styled.div`
-  width: 40%;
+  width: 40vw;
   height: 250px;
   border: 1px dotted orange;
   min-width: 100px;
@@ -15,7 +15,7 @@ const ProdutoContainer = styled.div`
   align-items: start;
   justify-content: flex-start;
   padding: 5px;
-
+  margin: 5px;
 
 `
 const ProdutoImage = styled.img `
@@ -35,11 +35,12 @@ const PValor = styled.p `
 // Código
 
 function Produto (props) {
+  
   return (
     <ProdutoContainer>
-      <ProdutoImage src={props.urlImagem}/>
-      <PNOme>{props.nome}</PNOme>
-      <PValor>R${props.valor}</PValor>
+      <ProdutoImage src={props.dadosProduto.urlImagem}/>
+      <PNOme>{props.dadosProduto.nome}</PNOme>
+      <PValor>R${props.dadosProduto.valor}</PValor>
       <ProdutoFooter/>
     </ProdutoContainer>
   )

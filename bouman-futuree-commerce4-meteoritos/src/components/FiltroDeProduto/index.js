@@ -6,8 +6,8 @@ const ContainerFiltro = styled.div`
   flex-direction: column;
   min-width: 120px;
   max-width: 35%;
-  min-height: 50vh
-  border: 1px solid black
+  min-height: 50vh;
+  border-right: 1px solid lightgray;
   padding: 10px;
 `
 
@@ -40,7 +40,7 @@ class FiltroDeProduto extends React.Component {
           />
         </FiltroInputs>
         <FiltroInputs>
-          <label id="BuscarProduto">Valor Produto:</label>
+          <label id="BuscarProduto">Produto:</label>
           <input 
           type="text"
           name="busca"
