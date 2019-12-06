@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Produto from "../LojaProduto/Produto";
 import FiltroDeProduto from "../FiltroDeProduto/index"
 import LojaCarrinho from "../LojaCarrinho/index"
+import ProdutoHeader from "./ProdutoHeader";
 
 const MainContainer  = styled.div`
   /* border: 1px solid black; */
@@ -20,16 +21,6 @@ const ContainerDeProdutos = styled.div `
   align-items: center;
 `
 
-const ProdutoHeader = styled.div`
-  height: 30px; 
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  
-`
-
 const ProdutoGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -38,44 +29,41 @@ const ProdutoGrid = styled.div`
   gap: 10px;
   margin-top: 13px;
 `
-const Texto = styled.p`
-  padding-left: 5px;
-`
-const Select = styled.select`
-  margin-right: 5px;
-`
 
 
-export default function ProdutosContainer(props) {
+export default class ProdutosContainer extends React.Component {
+  constructor (props) {
+    super(props);
+
+    this.state = {
+      
+    }
+  }
   
-  const listaDeProdutosDoContainer = props.produtos.map((cadaProduto) => {
+
+  render () { 
+  const listaDeProdutosDoContainer = this.props.produtos.map((cadaProduto) => {
     return <Produto dadosProduto={cadaProduto}/>
 
-    })
+  });
 
-    return(
-      <MainContainer>
-        <FiltroDeProduto></FiltroDeProduto>
-        <ContainerDeProdutos>
-          <ProdutoHeader>
-            <Texto>Quantidade de Produtos:</Texto> 
-            <Select>
-              <option>Preço: Crescente</option>
-              <option>Preço: Decrescente</option>
-            </Select>
-          </ProdutoHeader>
-          <ProdutoGrid>
-            {listaDeProdutosDoContainer}
-          </ProdutoGrid>
-        </ContainerDeProdutos>
+
+  return(
+    <MainContainer>
+      <FiltroDeProduto></FiltroDeProduto>
+      <ContainerDeProdutos>
+        <ProdutoHeader numero = {listaDeProdutosDoContainer.length} />
+        <ProdutoGrid>
+          {listaDeProdutosDoContainer}
+        </ProdutoGrid>
+      </ContainerDeProdutos>
+      
+      <LojaCarrinho>
         
-        <LojaCarrinho>
-          
-        </LojaCarrinho>
-      </MainContainer>
-    )
-  
-    }
+      </LojaCarrinho>
+    </MainContainer>
+  )}
+}
 
 
 

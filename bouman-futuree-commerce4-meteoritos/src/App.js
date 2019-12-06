@@ -7,7 +7,7 @@ const listaDeProdutos = [
   {
     id:1,
     urlImagem: "http://www.sun.org/uploads/meteoriteimages/4/mainimage_Seymchan_-_357g_4.JPG",
-    valor: 25.00,
+    valor: 25.55,
     nome: "Seymchan"
   },
   {
@@ -51,7 +51,7 @@ const listaDeProdutos = [
     id:8,
     urlImagem: "http://www.sun.org/uploads/meteoriteimages/62/mainimage_Seymchan_Slice_61.8g_4.jpg",
     valor: 1234.00,
-    nome: "Seymchan Slice"
+    nome: "Seymchan Slice",
   }
 ]
 class App extends Component {

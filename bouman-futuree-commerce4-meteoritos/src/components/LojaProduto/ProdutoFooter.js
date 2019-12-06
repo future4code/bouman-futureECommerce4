@@ -19,12 +19,21 @@ const ButtonAdicionarProduto = styled.button `
   }
 `
 
-function ProdutoFooter () {
+class ProdutoFooter extends React.Component  {
+  constructor (props){
+    super(props);
+
+    this.state = {
+
+    };
+  }
+
+  render () {
   return (
     <ProdutoFooterContainer>
       <ButtonAdicionarProduto>Adicionar Item</ButtonAdicionarProduto>
     </ProdutoFooterContainer>
-  )
+  )}
 }
 
 export default ProdutoFooter;
