@@ -7,6 +7,8 @@ const MenuCarrinho = styled.div`
   border: 1px solid black;
   text-align: left;
   padding: 0.5vh 1vw;
+  height: 100%;
+  width: 300px;
 `;
 
 const BotaoCarrinho = styled.div`
@@ -15,25 +17,43 @@ const BotaoCarrinho = styled.div`
   right: 20px;
   background-color: white;
   border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 5px;
-  height: 100px;
-  width: 100px;
+  box-shadow: 0px 0px 5px black;
+  height: 80px;
+  width: 80px;
   display: flex;
   cursor: pointer;
+  transition: all 200ms;
+  &:hover {
+    box-shadow: 0px 0px 10px black;
+  }
 `;
 
 const ImgCarrinho = styled.img`
   margin: auto;
   align-self: center;
-  height: 80px;
-  width: 80px;
+  height: 50px;
+  width: 50px;
+`;
+
+const ListaProduto = styled.ul`
+  list-style: none;
+  padding-inline-start: 0;
+`;
+
+const ItemProduto = styled.li`
+  border-bottom: 1px dashed black;
+`;
+
+const ExcluirItem = styled.span`
+  padding: 10px;
+  font-weight: bold;
 `;
 
 export default class LojaCarrinho extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mostraMenu: false
+      mostraMenu: true
     };
   }
 
@@ -54,9 +74,11 @@ export default class LojaCarrinho extends React.Component {
         {this.state.mostraMenu && (
           <MenuCarrinho>
             <h2>Carrinho</h2>
-            <ul>
-              <li>1x Item C</li>
-            </ul>
+            <ListaProduto>
+              <ItemProduto>
+                1x Item C<ExcluirItem>X</ExcluirItem>
+              </ItemProduto>
+            </ListaProduto>
             <p>
               Total: <b>R$ 0,00</b>
             </p>
