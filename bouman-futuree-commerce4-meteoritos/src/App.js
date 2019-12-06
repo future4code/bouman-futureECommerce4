@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import ProdutosContainer from './components/MainContainer/index'
-import{ render } from "react-dom"
 import FiltradosPorPreco from './components/FiltroDeProduto/FiltradosPorPreco';
 // import Produto from './components/LojaProduto/Produto';
 const listaDeProdutos = [
@@ -56,9 +55,9 @@ const listaDeProdutos = [
   }
 ]
 
-const 
+ 
 
-class App extends Component {
+class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -66,8 +65,15 @@ class App extends Component {
     }
   }
   render(){
-    return <ProdutosContainer produtos={listaDeProdutos}/>
-    <FiltradosPorPreco valor={props.listaDeProdutos.valor} min={0} max={1000000} />
+    return (
+    <div>
+    <ProdutosContainer produtos={listaDeProdutos}/>
+    <FiltradosPorPreco 
+    valor={listaDeProdutos}
+    min={0}
+    max={1000000} />
+    </div>
+    )
   }
   
 }
