@@ -4,7 +4,7 @@ import styled from "styled-components";
 const MenuCarrinho = styled.div`
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border-left: 1px solid lightgray;
   text-align: left;
   padding: 0.5vh 1vw;
   height: 100%;
@@ -71,12 +71,12 @@ class LojaCarrinho extends React.Component {
         <BotaoCarrinho onClick={this.aoClicarNoCarrinho}>
           <ImgCarrinho
             src="https://icons-for-free.com/iconfiles/png/512/cart-131964784999299812.png"
-            alt="carrinho"
+            alt="Carrinho"
           />
         </BotaoCarrinho>
         {this.state.mostraMenu && (
           <MenuCarrinho>
-            <h2>Carrinho</h2>
+            <h2>Carrinho:</h2>
             <ListaProduto>
               {listaDeItensNoCarrinho}
             </ListaProduto>

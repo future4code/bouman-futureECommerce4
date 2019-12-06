@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-// import { ReactComponent } from '*.svg';
+
 
 // Estilização
 
@@ -16,39 +16,40 @@ const ProdutoContainer = styled.div`
   justify-content: flex-start;
   padding: 5px;
   margin: 5px;
+`;
 
-`
 const ProdutoImage = styled.img `
   width: 100%;
   height: 130px;
-`
+`;
 
-const PNOme = styled.p `
+const PNome = styled.p `
   align-self: center;
   margin-top: 10px;
-`
+`;
 
 const PValor = styled.p `
   margin: 15px 0px 10px 5px;
-`
+`;
 
 const ProdutoFooterContainer = styled.div`
   width: 100%;
   height: 100%;
-`
-const ButtonAdicionarProduto = styled.button `
+`;
+
+const ButtonAdicionarProduto = styled.button`
   width: 100%;
   height: 100%;
   background-color: black;
   color: white;
   outline: 0;
   border: 0;
-  
   :hover {
     background-color: orange;
     color: black;
   }
-`
+`;
+
 
 // Código
 
@@ -72,8 +73,8 @@ class Produto extends React.Component {
     return (
       <ProdutoContainer>
         <ProdutoImage src={this.props.dadosProduto.urlImagem}/>
-        <PNOme>{this.props.dadosProduto.nome}</PNOme>
-        <PValor>R${this.props.dadosProduto.valor}</PValor>
+        <PNome>{this.props.dadosProduto.nome}</PNome>
+        <PValor>R$ {this.props.dadosProduto.valor},00</PValor>
         <ProdutoFooterContainer>
         <ButtonAdicionarProduto onClick={this.aoAdicionarItem}>Adicionar Item</ButtonAdicionarProduto>
         </ProdutoFooterContainer>
