@@ -35,11 +35,12 @@ const PValor = styled.p `
 // Código
 
 function Produto (props) {
+  
   return (
     <ProdutoContainer>
-      <ProdutoImage src={props.urlImagem}/>
-      <PNOme>{props.nome}</PNOme>
-      <PValor>R${props.valor}</PValor>
+      <ProdutoImage src={props.dadosProduto.urlImagem}/>
+      <PNOme>{props.dadosProduto.nome}</PNOme>
+      <PValor>R${props.dadosProduto.valor}</PValor>
       <ProdutoFooter/>
     </ProdutoContainer>
   )
