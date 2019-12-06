@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import FiltradosPorPreco from '../FiltroDeProduto/FiltradosPorPreco'
 
 const ContainerFiltro = styled.div`
   display: flex;

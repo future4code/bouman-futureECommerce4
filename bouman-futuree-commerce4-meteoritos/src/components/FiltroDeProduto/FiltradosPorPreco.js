@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function FiltradosPorPreco(props) {
     const produtosFiltrados = props.valor.filter((cadaValor) =>{
-        if(cadaValor >0){
+        if(cadaValor.valor > 1000){
             return true
         }else{
             return false
@@ -14,11 +14,12 @@ function FiltradosPorPreco(props) {
     })
 
     console.log(produtosFiltrados)
+    
     return (
         <div>
             <ul>
                 {props.valor.map(cadaValor => {
-                    return <li>{cadaValor}</li>;
+                    return console.log(cadaValor.valor)
                 })}
             </ul>
         </div>

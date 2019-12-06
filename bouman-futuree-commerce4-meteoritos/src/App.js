@@ -69,7 +69,7 @@ class App extends React.Component {
     <div>
     <ProdutosContainer produtos={listaDeProdutos}/>
     <FiltradosPorPreco 
-    valor={listaDeProdutos.valor}
+    valor={listaDeProdutos}
     min={0}
     max={1000000} />
     </div>
