@@ -49,11 +49,11 @@ const ExcluirItem = styled.span`
   font-weight: bold;
 `;
 
-export default class LojaCarrinho extends React.Component {
+class LojaCarrinho extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mostraMenu: true
+      mostraMenu: true,
     };
   }
 
@@ -62,11 +62,14 @@ export default class LojaCarrinho extends React.Component {
   };
 
   render() {
+    const listaDeItensNoCarrinho = this.props.listaCarrinho2.map((cadaItem) => {
+      return <ItemProduto><ExcluirItem>X</ExcluirItem>{cadaItem.nome} - R$ {cadaItem.valor},00</ItemProduto>
+    })
+    console.log(listaDeItensNoCarrinho)
     return (
       <div>
-        <BotaoCarrinho>
+        <BotaoCarrinho onClick={this.aoClicarNoCarrinho}>
           <ImgCarrinho
-            onClick={this.aoClicarNoCarrinho}
             src="https://icons-for-free.com/iconfiles/png/512/cart-131964784999299812.png"
             alt="carrinho"
           />
@@ -75,9 +78,7 @@ export default class LojaCarrinho extends React.Component {
           <MenuCarrinho>
             <h2>Carrinho</h2>
             <ListaProduto>
-              <ItemProduto>
-                1x Item C<ExcluirItem>X</ExcluirItem>
-              </ItemProduto>
+              {listaDeItensNoCarrinho}
             </ListaProduto>
             <p>
               Total: <b>R$ 0,00</b>
@@ -88,3 +89,5 @@ export default class LojaCarrinho extends React.Component {
     );
   }
 }
+
+export default LojaCarrinho

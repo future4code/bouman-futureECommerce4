@@ -46,16 +46,32 @@ const Select = styled.select`
 `
 
 
-export default function ProdutosContainer(props) {
+export default class ProdutosContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      listaCarrinho1: []
+    };
+  }
   
-  const listaDeProdutosDoContainer = props.produtos.map((cadaProduto) => {
-    return <Produto dadosProduto={cadaProduto}/>
+  adicionarItemNoCarrinho = (id, nome, valor) => {
+    const novoItemNoCarrinho = {
+      id: id,
+      nome: nome,
+      valor: valor
+    }
+    const listaCarrinhoCopia = [...this.state.listaCarrinho1]
+    listaCarrinhoCopia.push(novoItemNoCarrinho); 
+    this.setState ({listaCarrinho1: listaCarrinhoCopia})
+  }
 
+  render() {
+    const listaDeProdutosDoContainer = this.props.produtos.map((cadaProduto) => {
+      return <Produto dadosProduto={cadaProduto} adicionarItemNoCarrinho={this.adicionarItemNoCarrinho}/>
     })
-
     return(
       <MainContainer>
-        <FiltroDeProduto></FiltroDeProduto>
+        <FiltroDeProduto/>
         <ContainerDeProdutos>
           <ProdutoHeader>
             <Texto>Quantidade de Produtos:</Texto> 
@@ -68,14 +84,11 @@ export default function ProdutosContainer(props) {
             {listaDeProdutosDoContainer}
           </ProdutoGrid>
         </ContainerDeProdutos>
-        
-        <LojaCarrinho>
-          
-        </LojaCarrinho>
+        <LojaCarrinho listaCarrinho2={this.state.listaCarrinho1}/>
       </MainContainer>
     )
-  
-    }
+  }
+}
 
 
 
